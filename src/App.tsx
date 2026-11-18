@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+ import NavBar from "./components/Navbar";
+ import Gallery from "./components/Gallery";
+ import Content from "./components/Content";
+ import Footer from "./components/Footer";
+ import Circle from "./components/Circle";
+ import backgroundGif from './images/mygif.gif';
+ import Box from '@mui/material/Box';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{
+      // Основные настройки фона
+      backgroundImage: `url(${backgroundGif})`,
+      backgroundSize: 'cover',        // Растянуть, чтобы заполнить всё пространство
+      backgroundPosition: 'center',    // Центрировать
+      backgroundRepeat: 'no-repeat',  // Не дублировать, если гифка маленькая
+      backgroundAttachment: 'fixed',  // Фон «приклеен» и не уезжает при скролле
+      
+      minHeight: '100vh',             // Минимум на всю высоту экрана
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <NavBar active="1"/>
+      <Gallery/>
+      <Circle/>
+      <Content/>
+      <Footer/>
+    </Box>
   );
 }
-
+ 
 export default App;

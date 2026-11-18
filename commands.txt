@@ -1,0 +1,5 @@
+npm uninstall @mui/material @mui/icons-material
+rd /s /q node_modules
+del package-lock.json
+npm install @mui/material@7.3.11 @mui/icons-material@7.3.11 @emotion/react@11.14.0 @emotion/styled@11.14.0 --save-exact
+npm start
